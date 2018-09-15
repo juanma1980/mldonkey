@@ -6641,11 +6641,13 @@ CRYPTOPP_DLL void OS_GenerateRandomBlock(bool blocking, byte *output, unsigned i
 
 //! Automaticly Seeded Randomness Pool
 /*! This class seeds itself using an operating system provided RNG. */
-class CRYPTOPP_DLL AutoSeededRandomPool : public RandomPool
+//class CRYPTOPP_DLL AutoSeededRandomPool : public RandomPool
+class CRYPTOPP_DLL RandomPool : public RandomPool
 {
 public:
 	//! blocking will be ignored if the preferred RNG isn't available
-	explicit AutoSeededRandomPool(bool blocking = false, unsigned int seedSize = 32)
+	//explicit AutoSeededRandomPool(bool blocking = false, unsigned int seedSize = 32)
+	explicit RandomPool(bool blocking = false, unsigned int seedSize = 32)
 		{Reseed(blocking, seedSize);}
 	void Reseed(bool blocking = false, unsigned int seedSize = 32);
 };

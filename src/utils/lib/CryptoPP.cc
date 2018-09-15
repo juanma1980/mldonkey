@@ -9310,7 +9310,8 @@ void OS_GenerateRandomBlock(bool blocking, byte *output, unsigned int size)
 	}
 }
 
-void AutoSeededRandomPool::Reseed(bool blocking, unsigned int seedSize)
+//void AutoSeededRandomPool::Reseed(bool blocking, unsigned int seedSize)
+void RandomPool::Reseed(bool blocking, unsigned int seedSize)
 {
 	SecByteBlock seed(seedSize);
 	OS_GenerateRandomBlock(blocking, seed, seedSize);
@@ -9500,7 +9501,8 @@ void createKey(char buf[]) {
 
 		std::string myString;
 
-		AutoSeededRandomPool rng;
+//		AutoSeededRandomPool rng;
+		RandomPool rng;
   	InvertibleRSAFunction privKey;
   	privKey.Initialize(rng, PRIVKEYSIZE); 
 
@@ -9568,7 +9570,8 @@ int createSignature(byte *buf, int maxLen, byte *key, int keyLen, uint32_t cInt,
 	try {
 
 		CryptoPP::SecByteBlock sBB(s_signer->SignatureLength());
-		CryptoPP::AutoSeededRandomPool rng;
+//		CryptoPP::AutoSeededRandomPool rng;
+		CryptoPP::RandomPool rng;
 	
 		byte bArray[MAXPUBKEYSIZE+9];
 

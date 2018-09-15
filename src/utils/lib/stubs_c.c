@@ -851,7 +851,7 @@ static void * dns_thread(void * arg)
   sigfillset(&mask);
   pthread_sigmask(SIG_BLOCK, &mask, NULL);
   
-  nice(19);
+ // nice(19);
 #endif  /* !defined(PTW32_STATIC_LIB) */
   
   pthread_mutex_lock(&mutex);

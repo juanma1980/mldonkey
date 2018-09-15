@@ -315,7 +315,7 @@ static void * hasher_thread(void * arg)
   sigfillset(&mask);
   pthread_sigmask(SIG_BLOCK, &mask, NULL);
   
-  nice(19);
+//  nice(19);
 #endif
   
   pthread_mutex_lock(&mutex);

@@ -197,7 +197,8 @@ unsigned short fst_hash_checksum (unsigned char *hash)
 /*****************************************************************************/
 
 // hash file
-int fst_hash_file (unsigned char *fth, char *file, int64_t filesize)
+//int fst_hash_file (unsigned char *fth, unsigned char *file, int64_t filesize)
+int fst_hash_file (unsigned char *fth, char* file, int filesize)
 {
   FILE *fp;
   unsigned char *buf;
@@ -271,7 +272,8 @@ int fst_hash_file (unsigned char *fth, char *file, int64_t filesize)
 }
 
 
-void fst_hash_string (unsigned char *fth, unsigned char *file, int64_t filesize)
+//void fst_hash_string (unsigned char *fth, unsigned char *file, int64_t filesize)
+void fst_hash_string (unsigned char *fth, unsigned char *file, int filesize)
 {
   unsigned char * buf = file;
   size_t len = filesize;

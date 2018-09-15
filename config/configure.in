@@ -133,7 +133,7 @@ END
   *aix*)
     SYSTEM=aix
     ;;
-  *beos*)
+  *beos*|*haiku*)
     SYSTEM=beos
     ;;
   *osf*)
@@ -188,6 +188,7 @@ case "$host" in
   i?86-*-nextstep*)        arch=i386; system=nextstep;;
   i?86-*-solaris*)         arch=i386; system=solaris;;
   i?86-*-beos*)            arch=i386; system=beos;;
+  i?86-*-haiku*)            arch=i386; system=beos;;
   i?86-*-cygwin*)          arch=i386; system=cygwin;;
   mips-*-irix6*)                arch=mips; system=irix;;
   hppa1.1-*-hpux*)              arch=hppa; system=hpux;;
